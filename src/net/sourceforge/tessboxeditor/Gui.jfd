@@ -1,0 +1,936 @@
+JFDML JFormDesigner: "5.2.1.0.138" Java: "1.6.0_65" encoding: "UTF-8"
+
+new FormModel {
+	"i18n.bundlePackage": "net.sourceforge.tessboxeditor"
+	"i18n.bundleName": "Gui"
+	"i18n.autoExternalize": false
+	"i18n.keyPrefix": "Gui"
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class java.awt.BorderLayout ) ) {
+			name: "this"
+			"defaultCloseOperation": 3
+			"title": "jTessBoxEditor"
+			add( new FormContainer( "javax.swing.JTabbedPane", new FormLayoutManager( class javax.swing.JTabbedPane ) ) {
+				name: "jTabbedPaneMain"
+				"border": new javax.swing.border.EmptyBorder( -2, 0, 0, 0 )
+				addEvent( new FormEvent( "javax.swing.event.ChangeListener", "stateChanged", "jTabbedPaneMainStateChanged", true ) )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.BorderLayout ) ) {
+					name: "jPanelTrainer"
+					add( new FormContainer( "javax.swing.JToolBar", new FormLayoutManager( class javax.swing.JToolBar ) ) {
+						name: "jToolBarTrainer"
+						"rollover": true
+						add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.FlowLayout ) {
+							"alignment": 0
+						} ) {
+							name: "jPanelMain"
+							add( new FormComponent( "javax.swing.JLabel" ) {
+								name: "jLabel4"
+								"text": "Tesseract Executables"
+							} )
+							add( new FormComponent( "javax.swing.JTextField" ) {
+								name: "jTextFieldTessDir"
+								"toolTipText": "Location of Tesseract Executables"
+								"enabled": false
+								"preferredSize": new java.awt.Dimension( 180, 24 )
+								auxiliary() {
+									"JavaCodeGenerator.variableModifiers": 4
+								}
+							} )
+							add( new FormComponent( "javax.swing.JButton" ) {
+								name: "jButtonBrowseTess"
+								"text": "..."
+								"toolTipText": "Browse"
+								"maximumSize": new java.awt.Dimension( 30, 23 )
+								"minimumSize": new java.awt.Dimension( 30, 23 )
+								"preferredSize": new java.awt.Dimension( 24, 23 )
+								auxiliary() {
+									"JavaCodeGenerator.variableModifiers": 4
+								}
+								addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "jButtonBrowseTessActionPerformed", true ) )
+							} )
+							add( new FormComponent( "javax.swing.JLabel" ) {
+								name: "jLabel3"
+								"text": "Training Data"
+							} )
+							add( new FormComponent( "javax.swing.JTextField" ) {
+								name: "jTextFieldDataDir"
+								"toolTipText": "Location of Source Training Data"
+								"enabled": false
+								"preferredSize": new java.awt.Dimension( 180, 24 )
+								auxiliary() {
+									"JavaCodeGenerator.variableModifiers": 4
+								}
+							} )
+							add( new FormComponent( "javax.swing.JButton" ) {
+								name: "jButtonBrowseData"
+								"text": "..."
+								"toolTipText": "Browse"
+								"maximumSize": new java.awt.Dimension( 30, 23 )
+								"minimumSize": new java.awt.Dimension( 30, 23 )
+								"preferredSize": new java.awt.Dimension( 24, 23 )
+								auxiliary() {
+									"JavaCodeGenerator.variableModifiers": 4
+								}
+								addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "jButtonBrowseDataActionPerformed", true ) )
+							} )
+							add( new FormComponent( "javax.swing.JLabel" ) {
+								name: "jLabel1"
+								"text": "Language"
+							} )
+							add( new FormComponent( "javax.swing.JTextField" ) {
+								name: "jTextFieldLang"
+								"minimumSize": new java.awt.Dimension( 34, 19 )
+								"preferredSize": new java.awt.Dimension( 30, 24 )
+								auxiliary() {
+									"JavaCodeGenerator.variableModifiers": 4
+								}
+							} )
+							add( new FormComponent( "javax.swing.JLabel" ) {
+								name: "jLabel2"
+								"text": "Bootstrap Language"
+							} )
+							add( new FormComponent( "javax.swing.JTextField" ) {
+								name: "jTextFieldBootstrapLang"
+								"minimumSize": new java.awt.Dimension( 34, 19 )
+								"preferredSize": new java.awt.Dimension( 30, 24 )
+								auxiliary() {
+									"JavaCodeGenerator.variableModifiers": 4
+								}
+							} )
+							add( new FormComponent( "javax.swing.JCheckBox" ) {
+								name: "jCheckBoxRTL"
+								"text": "RTL"
+								"toolTipText": "Right-To-Left Text Direction"
+								auxiliary() {
+									"JavaCodeGenerator.variableModifiers": 4
+								}
+							} )
+							add( new FormComponent( "javax.swing.JComboBox" ) {
+								name: "jComboBoxOps"
+								"toolTipText": "Training Mode"
+								auxiliary() {
+									"JavaCodeGenerator.variableModifiers": 4
+								}
+							} )
+							add( new FormComponent( "javax.swing.JButton" ) {
+								name: "jButtonTrain"
+								"text": "Run"
+								"toolTipText": "Start Training"
+								auxiliary() {
+									"JavaCodeGenerator.variableModifiers": 4
+								}
+								addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "jButtonTrainActionPerformed", true ) )
+							} )
+							add( new FormComponent( "javax.swing.JButton" ) {
+								name: "jButtonCancel"
+								"text": "Cancel"
+								"toolTipText": "Cancel Training"
+								auxiliary() {
+									"JavaCodeGenerator.postCreateCode": "jButtonCancel.setEnabled(false);"
+									"JavaCodeGenerator.variableModifiers": 4
+								}
+								addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "jButtonCancelActionPerformed", true ) )
+							} )
+							add( new FormComponent( "javax.swing.JButton" ) {
+								name: "jButtonValidate"
+								"text": "Validate"
+								"toolTipText": "Validate Generated Traineddata"
+								auxiliary() {
+									"JavaCodeGenerator.variableModifiers": 4
+								}
+								addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "jButtonValidateActionPerformed", true ) )
+							} )
+							add( new FormComponent( "javax.swing.JButton" ) {
+								name: "jButtonSaveLog"
+								"text": "Save"
+								"toolTipText": "Save Log"
+								addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "jButtonSaveLogActionPerformed", true ) )
+							} )
+							add( new FormComponent( "javax.swing.JButton" ) {
+								name: "jButtonClearLog"
+								"text": "Clear"
+								"toolTipText": "Clear Textaera"
+								auxiliary() {
+									"JavaCodeGenerator.variableModifiers": 4
+								}
+								addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "jButtonClearLogActionPerformed", true ) )
+							} )
+						} )
+					}, new FormLayoutConstraints( class java.lang.String ) {
+						"value": "First"
+					} )
+					add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+						name: "jScrollPane1"
+						add( new FormComponent( "javax.swing.JTextArea" ) {
+							name: "jTextAreaOutput"
+							"editable": false
+							"columns": 20
+							"rows": 5
+							"margin": new java.awt.Insets( 5, 5, 2, 2 )
+							auxiliary() {
+								"JavaCodeGenerator.variableModifiers": 4
+							}
+						} )
+					}, new FormLayoutConstraints( class java.lang.String ) {
+						"value": "Center"
+					} )
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.FlowLayout ) {
+						"alignment": 0
+					} ) {
+						name: "jPanelStatus1"
+						add( new FormComponent( "javax.swing.Box$Filler" ) {
+							name: "filler2"
+							"maximumSize": new java.awt.Dimension( 32767, 17 )
+							"minimumSize": new java.awt.Dimension( 0, 17 )
+							"preferredSize": new java.awt.Dimension( 0, 17 )
+						} )
+						add( new FormComponent( "javax.swing.JProgressBar" ) {
+							name: "jProgressBar1"
+							"stringPainted": true
+							auxiliary() {
+								"JavaCodeGenerator.postCreateCode": "jProgressBar1.setVisible(false);"
+								"JavaCodeGenerator.variableModifiers": 4
+							}
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "jLabelTime"
+							auxiliary() {
+								"JavaCodeGenerator.variableModifiers": 4
+							}
+						} )
+					}, new FormLayoutConstraints( class java.lang.String ) {
+						"value": "South"
+					} )
+				}, new FormLayoutConstraints( null ) {
+					"title": "Trainer"
+				} )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.BorderLayout ) ) {
+					name: "jPanelEditor"
+					add( new FormContainer( "javax.swing.JToolBar", new FormLayoutManager( class javax.swing.JToolBar ) ) {
+						name: "jToolBarEditor"
+						"rollover": true
+						add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.FlowLayout ) {
+							"alignment": 0
+							"hgap": 1
+						} ) {
+							name: "jPanel4"
+							add( new FormComponent( "javax.swing.JButton" ) {
+								name: "jButtonOpen"
+								"text": new FormMessage( null, "jButtonOpen.Text" )
+								"toolTipText": new FormMessage( null, "jButtonOpen.ToolTipText" )
+								"focusable": false
+								"horizontalTextPosition": 0
+								"verticalTextPosition": 3
+								addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "jButtonOpenActionPerformed", true ) )
+							} )
+							add( new FormComponent( "javax.swing.JButton" ) {
+								name: "jButtonSave"
+								"text": new FormMessage( null, "jButtonSave.Text" )
+								"toolTipText": new FormMessage( null, "jButtonSave.ToolTipText" )
+								"focusable": false
+								"horizontalTextPosition": 0
+								"verticalTextPosition": 3
+								addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "jButtonSaveActionPerformed", true ) )
+							} )
+							add( new FormComponent( "javax.swing.JButton" ) {
+								name: "jButtonCut"
+								"text": "Cut Images"
+								"toolTipText": "Export individual character images"
+							} )
+							add( new FormComponent( "javax.swing.JButton" ) {
+								name: "jButtonReload"
+								"text": "Reload"
+								"toolTipText": "Reload Box File"
+								"focusable": false
+								"horizontalTextPosition": 0
+								"verticalTextPosition": 3
+								addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "jButtonReloadActionPerformed", true ) )
+							} )
+							add( new FormComponent( "javax.swing.JButton" ) {
+								name: "jButtonMerge"
+								"text": new FormMessage( null, "jButtonMerge.Text" )
+								"toolTipText": new FormMessage( null, "jButtonMerge.ToolTipText" )
+								"focusable": false
+								"horizontalTextPosition": 0
+								"verticalTextPosition": 3
+								addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "jButtonMergeActionPerformed", true ) )
+							} )
+							add( new FormComponent( "javax.swing.JButton" ) {
+								name: "jButtonSplit"
+								"text": new FormMessage( null, "jButtonSplit.Text" )
+								"toolTipText": new FormMessage( null, "jButtonSplit.ToolTipText" )
+								"focusable": false
+								"horizontalTextPosition": 0
+								"verticalTextPosition": 3
+								addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "jButtonSplitActionPerformed", true ) )
+							} )
+							add( new FormComponent( "javax.swing.JButton" ) {
+								name: "jButtonInsert"
+								"text": new FormMessage( null, "jButtonInsert.Text" )
+								"toolTipText": new FormMessage( null, "jButtonInsert.ToolTipText" )
+								"focusable": false
+								"horizontalTextPosition": 0
+								"verticalTextPosition": 3
+								addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "jButtonInsertActionPerformed", true ) )
+							} )
+							add( new FormComponent( "javax.swing.JButton" ) {
+								name: "jButtonDelete"
+								"text": new FormMessage( null, "jButtonDelete.Text" )
+								"toolTipText": new FormMessage( null, "jButtonDelete.ToolTipText" )
+								"focusable": false
+								"horizontalTextPosition": 0
+								"verticalTextPosition": 3
+								addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "jButtonDeleteActionPerformed", true ) )
+							} )
+						} )
+						add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.FlowLayout ) ) {
+							name: "jPanelSpinner"
+							add( new FormComponent( "javax.swing.JLabel" ) {
+								name: "jLabelCharacter"
+								"labelFor": new FormReference( "jTextFieldCharacter" )
+								"text": "Character"
+							} )
+							add( new FormComponent( "javax.swing.JTextField" ) {
+								name: "jTextFieldCharacter"
+								"columns": 4
+								"enabled": false
+								"margin": new java.awt.Insets( 0, 2, 0, 2 )
+								"preferredSize": new java.awt.Dimension( 40, 24 )
+								auxiliary() {
+									"JavaCodeGenerator.postCreateCode": "jTextFieldCharacter.setDocument(new LimitedLengthDocument(12));"
+									"JavaCodeGenerator.variableModifiers": 4
+								}
+								addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "jTextFieldCharacterActionPerformed", true ) )
+							} )
+							add( new FormComponent( "javax.swing.JButton" ) {
+								name: "jButtonConvert"
+								"icon": new com.jformdesigner.model.SwingIcon( 0, "/net/sourceforge/tessboxeditor/icons/tools.png" )
+								"toolTipText": "<html>Convert NCR and Escape<br/>Sequence to Unicode</html>"
+								"preferredSize": new java.awt.Dimension( 20, 20 )
+								addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "jButtonConvertActionPerformed", true ) )
+							} )
+							add( new FormComponent( "javax.swing.JLabel" ) {
+								name: "jLabelX"
+								"labelFor": new FormReference( "jSpinnerX" )
+								"text": "X"
+							} )
+							add( new FormComponent( "javax.swing.JSpinner" ) {
+								name: "jSpinnerX"
+								"enabled": false
+								"preferredSize": new java.awt.Dimension( 63, 22 )
+								auxiliary() {
+									"JavaCodeGenerator.variableModifiers": 4
+								}
+								addEvent( new FormEvent( "javax.swing.event.ChangeListener", "stateChanged", "jSpinnerXStateChanged", true ) )
+							} )
+							add( new FormComponent( "javax.swing.JLabel" ) {
+								name: "jLabelY"
+								"labelFor": new FormReference( "jSpinnerY" )
+								"text": "Y"
+							} )
+							add( new FormComponent( "javax.swing.JSpinner" ) {
+								name: "jSpinnerY"
+								"enabled": false
+								"preferredSize": new java.awt.Dimension( 63, 22 )
+								auxiliary() {
+									"JavaCodeGenerator.variableModifiers": 4
+								}
+								addEvent( new FormEvent( "javax.swing.event.ChangeListener", "stateChanged", "jSpinnerYStateChanged", true ) )
+							} )
+							add( new FormComponent( "javax.swing.JLabel" ) {
+								name: "jLabelW"
+								"labelFor": new FormReference( "jSpinnerW" )
+								"text": "W"
+							} )
+							add( new FormComponent( "javax.swing.JSpinner" ) {
+								name: "jSpinnerW"
+								"model": new javax.swing.SpinnerNumberModel
+								"enabled": false
+								"preferredSize": new java.awt.Dimension( 48, 22 )
+								auxiliary() {
+									"JavaCodeGenerator.variableModifiers": 4
+								}
+								addEvent( new FormEvent( "javax.swing.event.ChangeListener", "stateChanged", "jSpinnerWStateChanged", true ) )
+							} )
+							add( new FormComponent( "javax.swing.JLabel" ) {
+								name: "jLabelH"
+								"labelFor": new FormReference( "jSpinnerH" )
+								"text": "H"
+							} )
+							add( new FormComponent( "javax.swing.JSpinner" ) {
+								name: "jSpinnerH"
+								"model": new javax.swing.SpinnerNumberModel
+								"enabled": false
+								"preferredSize": new java.awt.Dimension( 48, 22 )
+								auxiliary() {
+									"JavaCodeGenerator.variableModifiers": 4
+								}
+								addEvent( new FormEvent( "javax.swing.event.ChangeListener", "stateChanged", "jSpinnerHStateChanged", true ) )
+							} )
+						} )
+					}, new FormLayoutConstraints( class java.lang.String ) {
+						"value": "First"
+					} )
+					add( new FormContainer( "javax.swing.JSplitPane", new FormLayoutManager( class javax.swing.JSplitPane ) ) {
+						name: "jSplitPaneEditor"
+						"dividerSize": 2
+						add( new FormContainer( "javax.swing.JTabbedPane", new FormLayoutManager( class javax.swing.JTabbedPane ) ) {
+							name: "jTabbedPaneBoxData"
+							add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.BorderLayout ) ) {
+								name: "jPanelCoord"
+								auxiliary() {
+									"JavaCodeGenerator.variableModifiers": 4
+								}
+								add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+									name: "jScrollPaneCoord"
+									"preferredSize": new java.awt.Dimension( 200, 275 )
+									add( new FormComponent( "javax.swing.JTable" ) {
+										name: "jTable"
+										"model": new com.jformdesigner.model.SwingTableModel( new java.util.Vector, new java.util.Vector {
+											add( "Char" )
+											add( "X" )
+											add( "Y" )
+											add( "Width" )
+											add( "Height" )
+										}, new java.util.Vector {
+											add( class java.lang.String )
+											add( class java.lang.Object )
+											add( class java.lang.Object )
+											add( class java.lang.Object )
+											add( class java.lang.Object )
+										}, new java.util.Vector {
+											add( true )
+											add( false )
+											add( false )
+											add( false )
+											add( false )
+										}, new java.util.Vector {
+											add( null )
+											add( null )
+											add( null )
+											add( null )
+											add( null )
+										} )
+										"fillsViewportHeight": true
+										"selectionMode": 2
+										auxiliary() {
+											"JavaCodeGenerator.customCreateCode": "new javax.swing.JTable() {\r\n    public Component prepareRenderer(TableCellRenderer renderer, int row, int column) {\r\n        Component c = super.prepareRenderer(renderer, row, column);\r\n        if (font != null && column == 0) {\r\n            c.setFont(font);\r\n        }\r\n        return c;\r\n    }\r\n};;"
+											"JavaCodeGenerator.variableModifiers": 4
+										}
+									} )
+								}, new FormLayoutConstraints( class java.lang.String ) {
+									"value": "Center"
+								} )
+								add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.FlowLayout ) ) {
+									name: "jPanelFind"
+									add( new FormComponent( "javax.swing.JTextField" ) {
+										name: "jTextFieldFind"
+										"preferredSize": new java.awt.Dimension( 200, 20 )
+										auxiliary() {
+											"JavaCodeGenerator.variableModifiers": 4
+										}
+										addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "jTextFieldFindActionPerformed", true ) )
+									} )
+									add( new FormComponent( "javax.swing.JButton" ) {
+										name: "jButtonFind"
+										"text": new FormMessage( null, "jButtonFind.Text" )
+										"toolTipText": new FormMessage( null, "jButtonFind.ToolTipText" )
+										addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "jButtonFindActionPerformed", true ) )
+									} )
+								}, new FormLayoutConstraints( class java.lang.String ) {
+									"value": "South"
+								} )
+							}, new FormLayoutConstraints( null ) {
+								"title": "Box Coordinates"
+							} )
+							add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+								name: "jScrollPaneBoxData"
+								add( new FormComponent( "javax.swing.JTextArea" ) {
+									name: "jTextAreaBoxData"
+									"editable": false
+									"columns": 20
+									"rows": 5
+									"margin": new java.awt.Insets( 8, 8, 2, 2 )
+									auxiliary() {
+										"JavaCodeGenerator.variableModifiers": 4
+									}
+								} )
+							}, new FormLayoutConstraints( null ) {
+								"title": "Box Data"
+							} )
+							add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.BorderLayout ) ) {
+								name: "jPanelBoxView"
+								"background": sfield java.awt.Color lightGray
+								add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.FlowLayout ) {
+									"alignment": 0
+								} ) {
+									name: "jPanel1"
+									"background": sfield java.awt.Color lightGray
+									add( new FormComponent( "javax.swing.JLabel" ) {
+										name: "jLabelCodepoint"
+										"text": "Char/Codepoint:"
+										auxiliary() {
+											"JavaCodeGenerator.postCreateCode": "jLabelCodepoint.setFont(jLabelCodepoint.getFont().deriveFont(14.0f));"
+										}
+									} )
+									add( new FormComponent( "javax.swing.JTextField" ) {
+										name: "jTextFieldChar"
+										"editable": false
+										"opaque": false
+										auxiliary() {
+											"JavaCodeGenerator.postCreateCode": "jTextFieldChar.setFont(jTextFieldChar.getFont().deriveFont(14.0f));"
+											"JavaCodeGenerator.variableModifiers": 4
+										}
+									} )
+									add( new FormComponent( "javax.swing.JTextField" ) {
+										name: "jTextFieldCodepointValue"
+										"editable": false
+										"opaque": false
+										auxiliary() {
+											"JavaCodeGenerator.postCreateCode": "jTextFieldCodepointValue.setFont(jTextFieldCodepointValue.getFont().deriveFont(14.0f));"
+										}
+									} )
+								}, new FormLayoutConstraints( class java.lang.String ) {
+									"value": "North"
+								} )
+								add( new FormComponent( "javax.swing.JLabel" ) {
+									name: "jLabelSubimage"
+									"horizontalAlignment": 0
+									auxiliary() {
+										"JavaCodeGenerator.variableModifiers": 4
+									}
+								}, new FormLayoutConstraints( class java.lang.String ) {
+									"value": "Center"
+								} )
+								add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.FlowLayout ) ) {
+									name: "jPanel2"
+									"background": new java.awt.Color( 192, 192, 192, 255 )
+									add( new FormComponent( "javax.swing.JButton" ) {
+										name: "jButtonPrev"
+										"text": "Prev"
+										addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "jButtonPrevActionPerformed", true ) )
+									} )
+									add( new FormComponent( "javax.swing.JButton" ) {
+										name: "jButtonNext"
+										"text": "Next"
+										addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "jButtonNextActionPerformed", true ) )
+									} )
+								}, new FormLayoutConstraints( class java.lang.String ) {
+									"value": "South"
+								} )
+							}, new FormLayoutConstraints( null ) {
+								"title": "Box View"
+							} )
+						}, new FormLayoutConstraints( class java.lang.String ) {
+							"value": "left"
+						} )
+						add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+							name: "jScrollPaneImage"
+							auxiliary() {
+								"JavaCodeGenerator.postCreateCode": "jScrollPaneImage.getVerticalScrollBar().setUnitIncrement(20);\njScrollPaneImage.getHorizontalScrollBar().setUnitIncrement(20);"
+							}
+							add( new FormComponent( "javax.swing.JLabel" ) {
+								name: "jLabelImage"
+								"verticalAlignment": 1
+								auxiliary() {
+									"JavaCodeGenerator.customCreateCode": "new JImageLabel();;"
+									"JavaCodeGenerator.variableModifiers": 4
+								}
+							} )
+						}, new FormLayoutConstraints( class java.lang.String ) {
+							"value": "right"
+						} )
+					}, new FormLayoutConstraints( class java.lang.String ) {
+						"value": "Center"
+					} )
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.FlowLayout ) ) {
+						name: "jPanelStatus"
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "jLabelStatus"
+							auxiliary() {
+								"JavaCodeGenerator.variableModifiers": 4
+							}
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "jLabelPageNbr"
+						} )
+						add( new FormComponent( "javax.swing.JButton" ) {
+							name: "jButtonPrevPage"
+							"icon": new com.jformdesigner.model.SwingIcon( 0, "/net/sourceforge/tessboxeditor/icons/PrevPage.gif" )
+							"toolTipText": new FormMessage( null, "jButtonPrevPage.ToolTipText" )
+							"focusable": false
+							"horizontalTextPosition": 0
+							"verticalTextPosition": 3
+							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "jButtonPrevPageActionPerformed", true ) )
+						} )
+						add( new FormComponent( "javax.swing.JButton" ) {
+							name: "jButtonNextPage"
+							"icon": new com.jformdesigner.model.SwingIcon( 0, "/net/sourceforge/tessboxeditor/icons/NextPage.gif" )
+							"toolTipText": new FormMessage( null, "jButtonNextPage.ToolTipText" )
+							"focusable": false
+							"horizontalTextPosition": 0
+							"verticalTextPosition": 3
+							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "jButtonNextPageActionPerformed", true ) )
+						} )
+					}, new FormLayoutConstraints( class java.lang.String ) {
+						"value": "South"
+					} )
+				}, new FormLayoutConstraints( null ) {
+					"title": "Box Editor"
+				} )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.BorderLayout ) ) {
+					name: "jPanelTIFFBox"
+					add( new FormContainer( "javax.swing.JToolBar", new FormLayoutManager( class javax.swing.JToolBar ) ) {
+						name: "jToolBarGenerator"
+						"rollover": true
+						add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.FlowLayout ) {
+							"alignment": 0
+						} ) {
+							name: "jPanel3"
+							add( new FormComponent( "javax.swing.JButton" ) {
+								name: "jButtonInput"
+								"text": "Input"
+								"toolTipText": "Load Text File"
+								"focusable": false
+								"horizontalTextPosition": 0
+								"verticalTextPosition": 3
+								addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "jButtonInputActionPerformed", true ) )
+							} )
+							add( new FormComponent( "javax.swing.JLabel" ) {
+								name: "jLabelOutput"
+								"text": "Output"
+							} )
+							add( new FormComponent( "javax.swing.JTextField" ) {
+								name: "jTextFieldPrefix"
+								"toolTipText": "Prefix (Language Code)"
+								"preferredSize": new java.awt.Dimension( 38, 24 )
+								auxiliary() {
+									"JavaCodeGenerator.postCreateCode": "jTextFieldPrefix.setText(prefs.get(\"trainLanguage\", \"eng\"));"
+									"JavaCodeGenerator.variableModifiers": 4
+								}
+							} )
+							add( new FormComponent( "javax.swing.JTextField" ) {
+								name: "jTextFieldFileName"
+								"toolTipText": "Filename"
+								"preferredSize": new java.awt.Dimension( 140, 24 )
+								auxiliary() {
+									"JavaCodeGenerator.variableModifiers": 4
+								}
+							} )
+							add( new FormComponent( "javax.swing.JButton" ) {
+								name: "jButtonFont"
+								"text": "Font"
+								"toolTipText": "Select Font"
+								"focusable": false
+								"horizontalTextPosition": 0
+								"verticalTextPosition": 3
+								auxiliary() {
+									"JavaCodeGenerator.variableModifiers": 4
+								}
+								addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "jButtonFontActionPerformed", true ) )
+							} )
+							add( new FormComponent( "javax.swing.JCheckBox" ) {
+								name: "jCheckBoxAntiAliasing"
+								"text": "Anti-Aliasing"
+								auxiliary() {
+									"JavaCodeGenerator.variableModifiers": 4
+								}
+							} )
+							add( new FormComponent( "javax.swing.JLabel" ) {
+								name: "jLabelNoise"
+								"text": "Noise"
+							} )
+							add( new FormComponent( "javax.swing.JSpinner" ) {
+								name: "jSpinnerNoise"
+								"model": new javax.swing.SpinnerNumberModel( 0, 0, 5, 1 )
+								"toolTipText": "Add Noise to Image"
+								"name": "Noise"
+								"preferredSize": new java.awt.Dimension( 47, 22 )
+								auxiliary() {
+									"JavaCodeGenerator.variableModifiers": 4
+								}
+							} )
+							add( new FormComponent( "javax.swing.JLabel" ) {
+								name: "jLabelTracking"
+								"text": "Letter Tracking"
+							} )
+							add( new FormComponent( "javax.swing.JSpinner" ) {
+								name: "jSpinnerTracking"
+								"model": new javax.swing.SpinnerNumberModel( 0.0f, -0.04f, 0.1f, 0.01f )
+								"toolTipText": "Adjust Letter Tracking"
+								"preferredSize": new java.awt.Dimension( 64, 22 )
+								auxiliary() {
+									"JavaCodeGenerator.variableModifiers": 4
+								}
+								addEvent( new FormEvent( "javax.swing.event.ChangeListener", "stateChanged", "jSpinnerTrackingStateChanged", true ) )
+							} )
+							add( new FormComponent( "javax.swing.JLabel" ) {
+								name: "jLabelW1"
+								"text": "W"
+							} )
+							add( new FormComponent( "javax.swing.JSpinner" ) {
+								name: "jSpinnerW1"
+								"model": new javax.swing.SpinnerNumberModel( 2550, 600, 2550, 10 )
+								"toolTipText": "Image Width"
+								"preferredSize": new java.awt.Dimension( 63, 22 )
+								auxiliary() {
+									"JavaCodeGenerator.variableModifiers": 4
+								}
+							} )
+							add( new FormComponent( "javax.swing.JLabel" ) {
+								name: "jLabelH1"
+								"text": "H"
+							} )
+							add( new FormComponent( "javax.swing.JSpinner" ) {
+								name: "jSpinnerH1"
+								"model": new javax.swing.SpinnerNumberModel( 3300, 400, 3300, 10 )
+								"toolTipText": "Image Height"
+								"preferredSize": new java.awt.Dimension( 63, 22 )
+								auxiliary() {
+									"JavaCodeGenerator.variableModifiers": 4
+								}
+							} )
+							add( new FormComponent( "javax.swing.JButton" ) {
+								name: "jButtonGenerate"
+								"text": "Generate"
+								"toolTipText": "Generate TIFF/Box"
+								"focusable": false
+								"horizontalTextPosition": 0
+								"verticalTextPosition": 3
+								auxiliary() {
+									"JavaCodeGenerator.variableModifiers": 4
+								}
+								addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "jButtonGenerateActionPerformed", true ) )
+							} )
+							add( new FormComponent( "javax.swing.JButton" ) {
+								name: "jButtonClear"
+								"text": "Clear"
+								"toolTipText": "Clear Textarea"
+								"focusable": false
+								"horizontalTextPosition": 0
+								"verticalTextPosition": 3
+								addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "jButtonClearActionPerformed", true ) )
+							} )
+						} )
+					}, new FormLayoutConstraints( class java.lang.String ) {
+						"value": "First"
+					} )
+					add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+						name: "jScrollPaneText"
+						add( new FormComponent( "javax.swing.JTextArea" ) {
+							name: "jTextAreaInput"
+							"columns": 20
+							"lineWrap": true
+							"rows": 5
+							"wrapStyleWord": true
+							"margin": new java.awt.Insets( 5, 5, 2, 2 )
+							auxiliary() {
+								"JavaCodeGenerator.variableModifiers": 4
+							}
+						} )
+					}, new FormLayoutConstraints( class java.lang.String ) {
+						"value": "Center"
+					} )
+				}, new FormLayoutConstraints( null ) {
+					"title": "TIFF/Box Generator"
+				} )
+			}, new FormLayoutConstraints( class java.lang.String ) {
+				"value": "Center"
+			} )
+			menuBar: new FormContainer( "javax.swing.JMenuBar", new FormLayoutManager( class javax.swing.JMenuBar ) ) {
+				name: "jMenuBar"
+				add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
+					name: "jMenuFile"
+					"mnemonic": new FormMessage( null, "jMenuFile.Mnemonic" )
+					"text": new FormMessage( null, "jMenuFile.Text" )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "jMenuItemOpen"
+						"accelerator": static javax.swing.KeyStroke getKeyStroke( 79, 130, false )
+						"mnemonic": new FormMessage( null, "jMenuItemOpen.Mnemonic" )
+						"text": new FormMessage( null, "jMenuItemOpen.Text" )
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "jMenuItemOpenActionPerformed", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "jMenuItemSave"
+						"accelerator": static javax.swing.KeyStroke getKeyStroke( 83, 130, false )
+						"mnemonic": new FormMessage( null, "jMenuItemSave.Mnemonic" )
+						"text": new FormMessage( null, "jMenuItemSave.Text" )
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "jMenuItemSaveActionPerformed", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "jMenuItemSaveAs"
+						"accelerator": static javax.swing.KeyStroke getKeyStroke( 83, 195, false )
+						"mnemonic": new FormMessage( null, "jMenuItemSaveAs.Mnemonic" )
+						"text": new FormMessage( null, "jMenuItemSaveAs.Text" )
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "jMenuItemSaveAsActionPerformed", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JPopupMenu$Separator" ) {
+						name: "jSeparatorRecentFiles"
+					} )
+					add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
+						name: "jMenuRecentFiles"
+						"mnemonic": new FormMessage( null, "jMenuRecentFiles.Mnemonic" )
+						"text": new FormMessage( null, "jMenuRecentFiles.Text" )
+						auxiliary() {
+							"JavaCodeGenerator.variableModifiers": 4
+						}
+					} )
+					add( new FormComponent( "javax.swing.JPopupMenu$Separator" ) {
+						name: "jSeparatorExit"
+					} )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "jMenuItemExit"
+						"mnemonic": new FormMessage( null, "jMenuItemExit.Mnemonic" )
+						"text": new FormMessage( null, "jMenuItemExit.Text" )
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "jMenuItemExitActionPerformed", true ) )
+					} )
+				} )
+				add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
+					name: "jMenuEdit"
+					"mnemonic": new FormMessage( null, "jMenuEdit.Mnemonic" )
+					"text": new FormMessage( null, "jMenuEdit.Text" )
+					auxiliary() {
+						"JavaCodeGenerator.postCreateCode": "this.jMenuEdit.setVisible(false);\r\n"
+					}
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "jMenuItemMerge"
+						"accelerator": static javax.swing.KeyStroke getKeyStroke( 67, 130, false )
+						"mnemonic": new FormMessage( null, "jMenuItemMerge.Mnemonic" )
+						"text": new FormMessage( null, "jMenuItemMerge.Text" )
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "jMenuItemMergeActionPerformed", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "jMenuItemSplit"
+						"accelerator": static javax.swing.KeyStroke getKeyStroke( 88, 130, false )
+						"mnemonic": new FormMessage( null, "jMenuItemSplit.Mnemonic" )
+						"text": new FormMessage( null, "jMenuItemSplit.Text" )
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "jMenuItemSplitActionPerformed", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "jMenuItemInsert"
+						"accelerator": static javax.swing.KeyStroke getKeyStroke( 86, 130, false )
+						"mnemonic": new FormMessage( null, "jMenuItemInsert.Mnemonic" )
+						"text": new FormMessage( null, "jMenuItemInsert.Text" )
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "jMenuItemInsertActionPerformed", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "jMenuItemDelete"
+						"accelerator": static javax.swing.KeyStroke getKeyStroke( 127, 0, false )
+						"mnemonic": new FormMessage( null, "jMenuItemDelete.Mnemonic" )
+						"text": new FormMessage( null, "jMenuItemDelete.Text" )
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "jMenuItemDeleteActionPerformed", true ) )
+					} )
+				} )
+				add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
+					name: "jMenuSettings"
+					"mnemonic": new FormMessage( null, "jMenuSettings.Mnemonic" )
+					"text": "Settings"
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "jMenuItemFont"
+						"accelerator": static javax.swing.KeyStroke getKeyStroke( 84, 130, false )
+						"mnemonic": new FormMessage( null, "jMenuItemFont.Mnemonic" )
+						"text": new FormMessage( null, "jMenuItemFont.Text" )
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "jMenuItemFontActionPerformed", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JPopupMenu$Separator" ) {
+						name: "jSeparatorLAF"
+					} )
+					add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
+						name: "jMenuLookAndFeel"
+						"mnemonic": new FormMessage( null, "jMenuLookAndFeel.Mnemonic" )
+						"text": new FormMessage( null, "jMenuLookAndFeel.Text" )
+						auxiliary() {
+							"JavaCodeGenerator.variableModifiers": 4
+						}
+					} )
+				} )
+				add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
+					name: "jMenuTools"
+					"mnemonic": new FormMessage( null, "jMenuTools.Mnemonic" )
+					"text": new FormMessage( null, "jMenuTools.Text" )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "jMenuItemMergeTiff"
+						"accelerator": static javax.swing.KeyStroke getKeyStroke( 77, 130, false )
+						"mnemonic": new FormMessage( null, "jMenuItemMergeTiff.Mnemonic" )
+						"text": new FormMessage( null, "jMenuItemMergeTiff.Text" )
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "jMenuItemMergeTiffActionPerformed", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "jMenuItemSplitTiff"
+						"accelerator": static javax.swing.KeyStroke getKeyStroke( 76, 130, false )
+						"mnemonic": new FormMessage( null, "jMenuItemSplitTiff.Mnemonic" )
+						"text": new FormMessage( null, "jMenuItemSplitTiff.Text" )
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "jMenuItemSplitTiffActionPerformed", true ) )
+					} )
+				} )
+				add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
+					name: "jMenuHelp"
+					"mnemonic": new FormMessage( null, "jMenuHelp.Mnemonic" )
+					"text": new FormMessage( null, "jMenuHelp.Text" )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "jMenuItemHelp"
+						"mnemonic": new FormMessage( null, "jMenuItemHelp.Mnemonic" )
+						"text": new FormMessage( null, "jMenuItemHelp.Text" )
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "jMenuItemHelpActionPerformed", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JPopupMenu$Separator" ) {
+						name: "jSeparatorAbout"
+					} )
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "jMenuItemAbout"
+						"mnemonic": new FormMessage( null, "jMenuItemAbout.Mnemonic" )
+						"text": new FormMessage( null, "jMenuItemAbout.Text" )
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "jMenuItemAboutActionPerformed", true ) )
+					} )
+				} )
+			}
+		}, new FormLayoutConstraints( null ) {
+			"size": new java.awt.Dimension( 1295, 574 )
+			"location": new java.awt.Point( 0, 0 )
+		} )
+		add( new FormComponent( "javax.swing.JFileChooser" ) {
+			name: "jFileChooserInputImage"
+			"dialogTitle": new FormMessage( null, "jButtonOpen.ToolTipText" )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 584 )
+		} )
+		add( new FormContainer( "javax.swing.JDialog", new FormLayoutManager( class java.awt.BorderLayout ) ) {
+			name: "jDialogValidationResult"
+			"title": "Validation Result"
+			"minimumSize": new java.awt.Dimension( 600, 450 )
+			auxiliary() {
+				"JavaCodeGenerator.variableModifiers": 4
+			}
+			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+				name: "jScrollPane2"
+				add( new FormComponent( "javax.swing.JTextArea" ) {
+					name: "jTextAreaValidationResult"
+					"editable": false
+					"columns": 20
+					"rows": 5
+					"margin": new java.awt.Insets( 5, 5, 2, 2 )
+					auxiliary() {
+						"JavaCodeGenerator.variableModifiers": 4
+					}
+				} )
+			}, new FormLayoutConstraints( class java.lang.String ) {
+				"value": "Center"
+			} )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.FlowLayout ) ) {
+				name: "jPanelCommand"
+				"border": new javax.swing.border.EmptyBorder( 5, 1, 5, 1 )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "jButtonCloseDialog"
+					"text": "Close"
+					"toolTipText": "Close Dialog"
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "jButtonCloseDialogActionPerformed", true ) )
+				} )
+			}, new FormLayoutConstraints( class java.lang.String ) {
+				"value": "South"
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 994 )
+		} )
+	}
+}
