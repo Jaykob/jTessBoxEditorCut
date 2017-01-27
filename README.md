@@ -6,4 +6,4 @@ Currently only confirmed to run in IntelliJ on macOS.
 
 You can invert the images by commenting out lines 1520-1524 in Gui.java.
 
-[[https://github.com/Jaykob/jTessBoxEditorCut/blob/master/screenshot.png|alt=screenshot]]
+![Screenshot](/screenshot.png?raw=true)
